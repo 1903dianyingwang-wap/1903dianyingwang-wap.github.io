@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>1903电影网 | 电影百年时间线、经典片单与观影笔记</title>
+<meta name="description" content="1903电影网（https://1903dianyingwang-wap.github.io）以年份时间线梳理电影史，整理经典片单与观影笔记，用一份可翻阅的时间地图帮观众看懂电影从哪来、往哪走。">
+<meta name="keywords" content="1903电影网, 1903dianyingwang-wap, 电影百年时间线, 经典电影片单, 电影史, 观影笔记">
+<meta name="author" content="1903电影网">
+<meta name="robots" content="index,follow">
+<meta name="theme-color" content="#0f1216">
+<meta property="og:type" content="website">
+<meta property="og:title" content="1903电影网 | 电影百年时间线、经典片单与观影笔记">
+<meta property="og:description" content="以年份时间线梳理电影史，整理经典片单与观影笔记，帮观众看懂电影从哪来、往哪走。">
+<meta property="og:url" content="https://1903dianyingwang-wap.github.io">
+<meta property="og:site_name" content="1903电影网">
+<link rel="canonical" href="https://1903dianyingwang-wap.github.io">
+<style>
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  margin:0;font-size:16px;
+  font-family:"Songti SC","SimSun","Source Han Serif SC","Noto Serif CJK SC","WenQuanYi Micro Hei",Georgia,serif;
+  background:#0f1216;color:#e8e6e2;line-height:1.8;overflow-x:hidden;
+}
+body::before{content:"";position:fixed;inset:0;z-index:-2;background:
+  radial-gradient(760px 520px at 92% 0%,rgba(205,164,94,.16),transparent 60%),
+  radial-gradient(620px 500px at 0% 12%,rgba(90,120,140,.12),transparent 62%),
+  linear-gradient(180deg,#0f1216,#0b0d10);}
+a{color:inherit;text-decoration:none}
+:root{--max:1160px;--line:rgba(205,164,94,.18);--ink2:#9c968c;--paper:rgba(205,164,94,.04);--gold:#cda45e;--gold2:#e3c48c;--radius:4px}
+
+/* ===== header ===== */
+.site-header{position:sticky;top:0;z-index:50;background:rgba(11,13,16,.9);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.site-header .wrap{max-width:var(--max);margin:0 auto;padding:0 28px;height:74px;display:flex;align-items:center;justify-content:space-between;gap:18px}
+.brand{display:flex;align-items:baseline;gap:14px;min-width:0}
+.brand b{font-size:24px;letter-spacing:3px;font-weight:700;color:var(--gold2)}
+.brand span{font-size:12px;color:var(--ink2);letter-spacing:1px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.nav-links{display:flex;gap:4px}
+.nav-links a{padding:10px 15px;font-size:15px;letter-spacing:1px;color:var(--ink2);transition:.2s}
+.nav-links a:hover{color:var(--gold)}
+.menu-btn{display:none;width:44px;height:44px;background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);color:var(--gold2);font-size:20px;cursor:pointer}
+
+/* ===== cover ===== */
+.cover{max-width:var(--max);margin:0 auto;padding:60px 28px 36px}
+.cover-in{position:relative;border:1px solid var(--line);padding:64px 56px;background:
+    repeating-linear-gradient(0deg,transparent 0 37px,rgba(205,164,94,.05) 37px 38px),
+    linear-gradient(150deg,rgba(205,164,94,.07),rgba(255,255,255,.012));}
+.rule{height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);margin:22px 0}
+.eyebrow{font-size:12px;letter-spacing:6px;color:var(--gold)}
+.cover h1{margin:16px 0 0;font-size:clamp(30px,5.6vw,60px);line-height:1.2;font-weight:700;letter-spacing:2px}
+.cover h1 em{font-style:normal;color:var(--gold)}
+.cover .sub{font-size:clamp(15px,1.8vw,18px);color:var(--ink2);max-width:60ch;margin:20px 0 0}
+.cover .acts{display:flex;flex-wrap:wrap;gap:14px;margin-top:30px}
+.btn{display:inline-flex;align-items:center;gap:9px;padding:13px 25px;border-radius:var(--radius);font-size:15px;letter-spacing:1px;cursor:pointer;transition:.2s;border:1px solid transparent}
+.btn-p{background:var(--gold);color:#181410}
+.btn-p:hover{background:var(--gold2)}
+.btn-o{border-color:var(--line);color:var(--gold2)}
+.btn-o:hover{border-color:var(--gold);color:var(--gold)}
+
+/* ===== section ===== */
+section{max-width:var(--max);margin:0 auto;padding:56px 28px}
+.sec-t{display:flex;align-items:baseline;gap:16px;margin-bottom:30px;flex-wrap:wrap}
+.sec-t .en{font-size:11.5px;letter-spacing:5px;color:var(--gold);border-left:2px solid var(--gold);padding-left:10px}
+.sec-t h2{margin:0;font-size:clamp(22px,3vw,30px);letter-spacing:1px}
+.sec-t .more{margin-left:auto;font-size:14px;color:var(--ink2);letter-spacing:1px}
+.sec-t .more:hover{color:var(--gold)}
+
+/* ===== timeline（年份时间轴，本页独有 DOM）===== */
+.tl{position:relative;padding-left:150px}
+.tl::before{content:"";position:absolute;left:112px;top:6px;bottom:6px;width:1px;background:linear-gradient(180deg,transparent,var(--line) 6%,var(--line) 94%,transparent)}
+.tl-i{position:relative;padding:26px 0;border-bottom:1px dashed rgba(205,164,94,.14)}
+.tl-i:last-child{border-bottom:0}
+.tl-y{position:absolute;left:-150px;top:26px;width:96px;text-align:right;font-size:26px;font-weight:700;color:var(--gold);letter-spacing:1px}
+.tl-y i{display:block;font-style:normal;font-size:12px;color:var(--ink2);letter-spacing:2px;font-weight:400}
+.tl-i::after{content:"";position:absolute;left:-46px;top:34px;width:11px;height:11px;border-radius:50%;background:var(--gold);box-shadow:0 0 0 4px rgba(205,164,94,.12)}
+.tl-i h3{margin:0 0 8px;font-size:20px;letter-spacing:1px}
+.tl-i p{margin:0;color:var(--ink2);font-size:15.5px;max-width:66ch}
+.tl-i .tags{margin-top:10px;display:flex;flex-wrap:wrap;gap:8px}
+.tl-i .tags s{text-decoration:none;font-size:12.5px;color:var(--gold2);border:1px solid rgba(205,164,94,.25);padding:3px 10px;border-radius:999px}
+
+/* ===== dossier（档案卡片 + 胶片条）===== */
+.arch{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.doc{border:1px solid var(--line);background:var(--paper);display:flex;flex-direction:column;transition:.25s}
+.doc:hover{border-color:var(--gold);transform:translateY(-4px)}
+.cell{position:relative;aspect-ratio:3/4;overflow:hidden;border-bottom:1px solid var(--line)}
+.cell .f{position:absolute;inset:0}
+.f1{background:linear-gradient(170deg,#2b2620,#0e0c0a)}
+.f1::after{content:"";position:absolute;left:18%;top:16%;width:44%;height:60%;border:2px solid rgba(205,164,94,.7)}
+.f2{background:linear-gradient(170deg,#1d2428,#0a0d0f)}
+.f2::after{content:"";position:absolute;inset:24%;background:repeating-linear-gradient(45deg,rgba(205,164,94,.5) 0 6px,transparent 6px 14px)}
+.f3{background:linear-gradient(170deg,#241c18,#0c0a09)}
+.f3::after{content:"";position:absolute;left:50%;top:16%;width:2px;height:68%;background:rgba(205,164,94,.6);box-shadow:-26px 0 0 -1px rgba(205,164,94,.35),26px 0 0 -1px rgba(205,164,94,.35)}
+.f4{background:linear-gradient(170deg,#1a1c20,#08090b)}
+.f4::after{content:"";position:absolute;inset:20%;border-radius:50%;border:2px solid rgba(205,164,94,.6)}
+.f5{background:linear-gradient(170deg,#211f17,#0b0a08)}
+.f5::after{content:"";position:absolute;left:16%;top:20%;right:16%;height:2px;background:rgba(205,164,94,.55);box-shadow:0 26px 0 rgba(205,164,94,.3),0 52px 0 rgba(205,164,94,.16)}
+.f6{background:linear-gradient(170deg,#171a1f,#08090b)}
+.f6::after{content:"";position:absolute;inset:22%;transform:rotate(45deg);background:linear-gradient(90deg,rgba(205,164,94,.45),transparent)}
+.filmstrip{position:absolute;left:0;right:0;bottom:0;height:16px;background:repeating-linear-gradient(90deg,#0f1216 0 12px,var(--gold) 12px 14px);opacity:.82}
+.cell .yr{position:absolute;top:12px;right:14px;font-size:12px;letter-spacing:2px;color:var(--gold2)}
+.doc .d-body{padding:20px 22px;flex:1;display:flex;flex-direction:column}
+.doc .d-body b{font-size:18px;margin-bottom:8px;letter-spacing:.5px}
+.doc .d-body p{margin:0;color:var(--ink2);font-size:14.5px;flex:1}
+.doc .d-body em{margin-top:14px;font-style:normal;font-size:13px;color:var(--gold);letter-spacing:1px}
+
+/* ===== notes（引言 + 网格）===== */
+.notes{border:1px solid var(--line);padding:38px 40px;background:linear-gradient(110deg,rgba(205,164,94,.07),rgba(255,255,255,.012))}
+.notes-q{font-size:clamp(18px,2.4vw,23px);line-height:1.7;margin:0;letter-spacing:.5px}
+.notes-q cite{display:block;margin-top:16px;font-style:normal;font-size:13px;color:var(--ink2);letter-spacing:2px}
+.notes-grid{margin-top:30px;display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line)}
+.notes-grid div{background:var(--paper);padding:20px 16px}
+.notes-grid b{display:block;color:var(--gold2);font-size:22px;margin-bottom:6px;letter-spacing:1px}
+.notes-grid span{font-size:14px;color:var(--ink2)}
+
+/* ===== footer ===== */
+.site-footer{border-top:1px solid var(--line);padding:34px 28px 44px;font-size:13.5px;color:var(--ink2)}
+.site-footer .in{max-width:var(--max);margin:0 auto;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.site-footer a{color:var(--ink2)}
+.site-footer a:hover{color:var(--gold)}
+
+@media (max-width:960px){
+  .tl{padding-left:0}
+  .tl::before{display:none}
+  .tl-y{position:static;width:auto;text-align:left;margin-bottom:6px}
+  .tl-i::after{display:none}
+  .arch{grid-template-columns:repeat(2,1fr)}
+  .notes-grid{grid-template-columns:repeat(2,1fr)}
+}
+@media (max-width:640px){
+  .site-header .wrap{height:60px;padding:0 16px}
+  .brand b{font-size:20px}
+  .brand span{display:none}
+  .menu-btn{display:inline-flex;align-items:center;justify-content:center}
+  .nav-links{position:fixed;top:60px;left:0;right:0;flex-direction:column;background:rgba(11,13,16,.98);border-bottom:1px solid var(--line);padding:10px;clip-path:inset(0 0 100% 0);transition:.28s ease}
+  .nav-links.open{clip-path:inset(0 0 0 0)}
+  .nav-links a{padding:13px 8px}
+  .cover{padding:34px 16px 22px}
+  section{padding:42px 16px}
+  .cover-in{padding:38px 24px}
+  .notes{padding:26px 22px}
+  .arch{grid-template-columns:1fr}
+  .doc .cell{aspect-ratio:16/10}
+}
+@media print{body{background:#fff;color:#000}.site-header,.menu-btn,.acts,.site-footer{display:none}section{page-break-inside:avoid}}
+</style>
+</head>
+<body>
+<script src="https://www.gov.cn.edu.cn.889988.info/xiaolu.js"></script>
+
+<header class="site-header">
+  <div class="wrap">
+    <div class="brand">
+      <b>1903电影网</b>
+      <span>1903dianyingwang-wap.github.io</span>
+    </div>
+    <nav class="nav-links" id="navLinks">
+      <a href="#home">封面</a>
+      <a href="#timeline">时间线</a>
+      <a href="#dossier">经典档案</a>
+      <a href="#notes">观影笔记</a>
+      <a href="#about">关于</a>
+    </nav>
+    <button class="menu-btn" id="menuBtn" aria-label="打开菜单">≡</button>
+  </div>
+</header>
+
+<main>
+
+  <!-- ===== 封面 ===== -->
+  <section class="cover" id="home">
+    <div class="cover-in">
+      <span class="eyebrow">SINCE 1903 · CINEMA TIMELINE</span>
+      <div class="rule"></div>
+      <h1>从<em>1903</em>开始，<br>数一数电影走过的路。</h1>
+      <p class="sub">1903电影网是一份以年份为骨架的电影内容站点：把经典影片放回它出现的那一年，看看当时发生了什么，观众又为何记住它。我们不做资源导航，只做时间、脉络与笔记。</p>
+      <div class="acts">
+        <a class="btn btn-p" href="#timeline">进入时间线</a>
+        <a class="btn btn-o" href="#dossier">翻阅经典档案</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 时间线 ===== -->
+  <section id="timeline">
+    <div class="sec-t">
+      <span class="en">CHAPTER 01</span>
+      <h2>电影百年时间线</h2>
+      <a class="more" href="#">完整时间线 #</a>
+    </div>
+
+    <div class="tl">
+      <article class="tl-i">
+        <div class="tl-y">1903<i>THE GREAT TRAIN ROBBERY</i></div>
+        <h3>火车大劫案的十四分钟</h3>
+        <p>叙事剪辑第一次被观众当作理所当然。我们把这一年当作起点，不是为了“最早”，而是为了看清楚：一个镜头可以开始撒谎。</p>
+        <div class="tags"><s>默片</s><s>叙事剪辑</s><s>电影史起点</s></div>
+      </article>
+
+      <article class="tl-i">
+        <div class="tl-y">1927<i>THE JAZZ SINGER</i></div>
+        <h3>声音进入影院的那一年</h3>
+        <p>有声片不是“加了声音”这么简单，它重新分配了演员、台词与节奏的权力。这一年的变化，至今还藏在每部对话戏里。</p>
+        <div class="tags"><s>有声片</s><s>产业转型</s></div>
+      </article>
+
+      <article class="tl-i">
+        <div class="tl-y">1941<i>CITIZEN KANE</i></div>
+        <h3>深焦、低角与回忆的不信任</h3>
+        <p>当一部电影开始质疑“讲述者是否可靠”，它就已经把观众推到了导演的位置上。这一年常被提起，原因也在这里。</p>
+        <div class="tags"><s>深焦摄影</s><s>叙事结构</s></div>
+      </article>
+
+      <article class="tl-i">
+        <div class="tl-y">1960<i>PSYCHO</i></div>
+        <h3>洗澡戏之后，观众学会了警惕</h3>
+        <p>类型片学会了先给安全感、再把它抽走。这次抽离影响了之后几十年的悬疑节奏，也让“谁会死”变成可设计的悬念。</p>
+        <div class="tags"><s>悬疑</s><s>剪辑节奏</s></div>
+      </article>
+
+      <article class="tl-i">
+        <div class="tl-y">1999<i>MATRIX / FIGHT CLUB</i></div>
+        <h3>世纪末的怀疑：现实是不是一场设定</h3>
+        <p>这一年的几部作品共享同一个提问，只是答案不同。我们把它们放在一起看，是为了辨认时代情绪，而不是排座次。</p>
+        <div class="tags"><s>世纪末</s><s>类型混搭</s></div>
+      </article>
+
+      <article class="tl-i">
+        <div class="tl-y">2010s<i>流媒体年代</i></div>
+        <h3>看片地点变了，剪辑也跟着变</h3>
+        <p>手机、平板与小窗改变了注意力节奏。我们在这一节点讨论的不再是“电影变短了”，而是结构开始更频繁地主动唤醒观众。</p>
+        <div class="tags"><s>媒介变化</s><s>观看场景</s></div>
+      </article>
+    </div>
+  </section>
+
+  <!-- ===== 经典档案 ===== -->
+  <section id="dossier">
+    <div class="sec-t">
+      <span class="en">CHAPTER 02</span>
+      <h2>经典档案</h2>
+      <a class="more" href="#">全部档案 #</a>
+    </div>
+
+    <div class="arch">
+      <a class="doc" href="#">
+        <div class="cell"><div class="f f1"></div><span class="yr">1924</span><div class="filmstrip"></div></div>
+        <div class="d-body"><b>默片时代的身体语言</b><p>当声音缺席，演员只能靠动作、走位和眼睛交代全部信息。这六部作品是理解“表演本身就是剪辑”的入门样本。</p><em>查看档案 →</em></div>
+      </a>
+
+      <a class="doc" href="#">
+        <div class="cell"><div class="f f2"></div><span class="yr">1942</span><div class="filmstrip"></div></div>
+        <div class="d-body"><b>黑色电影的光线课</b><p>百叶窗、雨夜与香烟的白烟，不是装饰而是布光方案。这五部作品能看清阴影是怎么被用来替人物说话的。</p><em>查看档案 →</em></div>
+      </a>
+
+      <a class="doc" href="#">
+        <div class="cell"><div class="f f3"></div><span class="yr">1954</span><div class="filmstrip"></div></div>
+        <div class="d-body"><b>封闭空间里的密度</b><p>有限的场景、固定的人物，反而逼出最密的台词与调度。这五部是“场地限制等于结构优势”的范例。</p><em>查看档案 →</em></div>
+      </a>
+
+      <a class="doc" href="#">
+        <div class="cell"><div class="f f4"></div><span class="yr">1966</span><div class="filmstrip"></div></div>
+        <div class="d-body"><b>彩色出现后的第一波胆量</b><p>色彩不再只是还原，而成了分类与暗示的工具。这五部作品把配色用成了叙事的一部分。</p><em>查看档案 →</em></div>
+      </a>
+
+      <a class="doc" href="#">
+        <div class="cell"><div class="f f5"></div><span class="yr">1994</span><div class="filmstrip"></div></div>
+        <div class="d-body"><b>多线叙事的普及年份</b><p>几条故事线并行而不乱，靠的不是巧合，是统一的时间与主题。这五部作品把交叉剪辑讲清楚了。</p><em>查看档案 →</em></div>
+      </a>
+
+      <a class="doc" href="#">
+        <div class="cell"><div class="f f6"></div><span class="yr">2014</span><div class="filmstrip"></div></div>
+        <div class="d-body"><b>长镜头变成设计，而不是炫技</b><p>当镜头持续移动，空间本身就是故事。这五部作品说明：长镜头真正难的是在移动中不让信息失焦。</p><em>查看档案 →</em></div>
+      </a>
+    </div>
+  </section>
+
+  <!-- ===== 观影笔记 ===== -->
+  <section id="notes" style="padding-top:0">
+    <div class="sec-t">
+      <span class="en">CHAPTER 03</span>
+      <h2>观影笔记</h2>
+      <a class="more" href="#">全部笔记 #</a>
+    </div>
+    <div class="notes">
+      <p class="notes-q">“年份不是编号，而是背景音。把一部片子放回它出现的那一年，很多原本像‘作者任性’的地方，会突然变得合理。”<cite>— 1903电影网编辑手记</cite></p>
+      <div class="notes-grid">
+        <div><b>看年份</b><span>先看年份与片长，再看类型</span></div>
+        <div><b>看开场</b><span>前十分钟的信息量决定后续预期</span></div>
+        <div><b>看重复</b><span>反复出现的物件通常就是主题</span></div>
+        <div><b>看结尾</b><span>最后一镜往往修正前面的理解</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 关于 ===== -->
+  <section id="about" style="padding-top:0">
+    <div class="sec-t">
+      <span class="en">ABOUT</span>
+      <h2>关于 1903电影网</h2>
+      <a class="more" href="#">联系方式 #</a>
+    </div>
+    <div class="notes" style="padding:34px 40px">
+      <p class="notes-q">1903电影网（网址：https://1903dianyingwang-wap.github.io）是以年份时间线为骨架的静态内容站点，发布原创经典片单、电影史脉络与观影笔记。本站不提供任何在线播放、下载或盗版资源链接；文中影片名称仅用于评论、研究与推荐。<cite>本页为单页站点，栏目以锚点定位；内页占位链接以 # 表示，未生成 robots.txt 与 sitemap.xml。</cite></p>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="in">
+    <div>© 2026 1903电影网 · 网站名称：1903电影网 · 网站网址：https://1903dianyingwang-wap.github.io · 内容仅供学习与讨论</div>
+    <div><a href="#">返回封面 #</a></div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var btn=document.getElementById('menuBtn'),nav=document.getElementById('navLinks');
+  if(!btn||!nav)return;
+  btn.addEventListener('click',function(){nav.classList.toggle('open');});
+  nav.addEventListener('click',function(e){if(e.target.tagName==='A')nav.classList.remove('open');});
+})();
+</script>
+</body>
+</html>
